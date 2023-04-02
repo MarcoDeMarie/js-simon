@@ -1,12 +1,12 @@
 const listaNumeri = document.getElementById('lista-numeri')
-const numeriIdovinare = []
+const numeriIndovinare = []
 const numeriUtente= []
-const message = ''
+let message = ''
   for(let i = 0; i < 5; i++){
 
     let numbRandom = Math.floor(Math.random() * 100)
     console.log(numbRandom)
-    numeriIdovinare.push(numbRandom)
+    numeriIndovinare.push(numbRandom)
     listaNumeri.innerHTML += ' ' + numbRandom
   }
   
@@ -14,7 +14,7 @@ const message = ''
     listaNumeri.innerHTML = ' '
   }, 5000);
   
-  console.log(numeriIdovinare)
+  console.log(numeriIndovinare)
 
 
   setTimeout(function(){
@@ -27,8 +27,19 @@ const message = ''
     numeriUtente.push(promptNumb1, promptNumb2, promptNumb3 , promptNumb4, promptNumb5)
 
     console.log(numeriUtente)
-  }, 7000);
 
+    for(let i = 0; i < 5; i++){
+      if(numeriIndovinare[i] == numeriUtente[i]){
+        message= 'hai indovinato'
+      }
+      else{
+        message= 'non hai indovinato'
+      }
+    }
+    
+    console.log(message)
+    
+  }, 7000);
   
 
 
